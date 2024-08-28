@@ -1,5 +1,5 @@
 /**
- * 1431. can-place-flowers
+ * 605. can-place-flowers
  * https://leetcode.com/problems/can-place-flowers/description/?envType=study-plan-v2&envId=leetcode-75
  */
 
