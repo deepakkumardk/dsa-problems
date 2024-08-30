@@ -9,26 +9,25 @@
  * @return {number[]}
  */
 var productExceptSelf = function (nums) {
-  const prefixArray = new Array(nums.length).fill(1);
-  const postfixArray = new Array(nums.length).fill(1);
+  let lastPrefixMultiply = 1;
   const productArray = new Array(nums.length).fill(1);
 
-  for (let i = 0; i < nums.length; i++) {
-    if (i === 0) {
-      prefixArray[i] = 1;
-    } else {
-      prefixArray[i] = nums[i - 1] * prefixArray[i - 1];
-    }
-  }
   for (let i = nums.length - 1; i >= 0; i--) {
     if (i === nums.length - 1) {
-      postfixArray[i] = 1;
+      productArray[i] = 1;
     } else {
-      postfixArray[i] = nums[i + 1] * postfixArray[i + 1];
+      productArray[i] = nums[i + 1] * productArray[i + 1];
     }
   }
-  for (let i = 0; i < productArray.length; i++) {
-    productArray[i] = prefixArray[i] * postfixArray[i];
+  for (let i = 0; i < nums.length; i++) {
+    let iPrefix = 1;
+    if (i === 0) {
+      iPrefix = 1;
+    } else {
+      iPrefix = nums[i - 1] * lastPrefixMultiply;
+    }
+    lastPrefixMultiply = iPrefix;
+    productArray[i] = iPrefix * productArray[i];
   }
 
   return productArray;
