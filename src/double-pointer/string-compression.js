@@ -8,6 +8,38 @@
  * @return {number}
  */
 var compress = function (chars) {
+    let i = 0
+    let count = 0
+
+  for (i = 0; i < chars.length; i++) {
+    const char = chars[i];
+    count++
+    if(i =0) {
+        continue
+    }
+    let j = 0
+
+    while (condition) {
+        
+    }
+
+    if(char == char[i-1]) {
+        count++
+    } else {
+        count = 1
+        chars.
+    }
+    if(i == chars.length - 1) {
+        if(count> 1) {
+
+        }
+    }
+
+  }
+
+  // return i
+
+
   let lastChar = chars[0];
   let lastCharCount = 0;
   let result = [];
